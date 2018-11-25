@@ -14,7 +14,10 @@
 
     <div class="flex mb-4">
       <div class="w-2/3 mr-2">
-        <VideoDetail class="flex-1" :video="selectedVideo" />
+        <VideoDetail
+          class="flex-1"
+          :video="selectedVideo"
+        />
       </div>
       <div class="w-1/3 ml-2">
         <VideoList
@@ -28,11 +31,10 @@
 </template>
 
 <script>
-import SearchInput from './components/SearchInput.vue'
-import VideoDetail from './components/VideoDetail.vue'
-import VideoList from './components/VideoList.vue'
-
-import api from './services/api'
+import SearchInput from '@/components/SearchInput'
+import VideoDetail from '@/components/VideoDetail'
+import VideoList from '@/components/VideoList'
+import api from '@/services/api'
 
 export default {
   name: 'App',

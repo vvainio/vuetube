@@ -1,7 +1,7 @@
 <template>
   <div>
     <template v-if="video">
-      <div class="container">
+      <div class="embedded-container">
         <iframe
           allowfullscreen
           frameborder="0"
@@ -43,7 +43,7 @@ export default {
 </script>
 
 <style scoped>
-  .container {
+  .embedded-container {
     position: relative;
     width: 100%;
     height: 0;
