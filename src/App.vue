@@ -52,7 +52,6 @@ export default {
     async searchVideos (searchTerm) {
       const data = await api.search(searchTerm)
       this.videos = data.items
-      this.selectedVideo = data.items[0]
     },
 
     selectVideo (video) {
