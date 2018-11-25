@@ -2,7 +2,10 @@
   <div id="app">
     <SearchInput :search-fn="searchVideos" />
     <VideoDetail :video="selectedVideo" />
-    <VideoList :videos="videos" />
+    <VideoList
+      :videos="videos"
+      :select-fn="selectVideo"
+    />
   </div>
 </template>
 
@@ -32,6 +35,10 @@ export default {
       const data = await api.search(searchTerm)
       this.videos = data.items
       this.selectedVideo = data.items[0]
+    },
+
+    selectVideo (video) {
+      this.selectedVideo = video
     }
   }
 }
