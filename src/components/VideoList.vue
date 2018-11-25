@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import VideoItem from './VideoItem.vue'
+import VideoItem from '@/components/VideoItem'
 
 export default {
   name: 'VideoList',
@@ -28,10 +28,6 @@ export default {
       type: Array,
       required: true
     }
-  },
-
-  methods: {
-
   }
 }
 </script>
