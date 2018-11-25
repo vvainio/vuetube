@@ -1,12 +1,14 @@
 <template>
   <div id="app">
     <SearchInput :search-fn="searchVideos" />
+    <VideoDetail :video="selectedVideo" />
     <VideoList :videos="videos" />
   </div>
 </template>
 
 <script>
 import SearchInput from './components/SearchInput.vue'
+import VideoDetail from './components/VideoDetail.vue'
 import VideoList from './components/VideoList.vue'
 
 import api from './services/api'
@@ -16,10 +18,12 @@ export default {
 
   components: {
     SearchInput,
+    VideoDetail,
     VideoList
   },
 
   data: () => ({
+    selectedVideo: null,
     videos: []
   }),
 
@@ -27,6 +31,7 @@ export default {
     async searchVideos (searchTerm) {
       const data = await api.search(searchTerm)
       this.videos = data.items
+      this.selectedVideo = data.items[0]
     }
   }
 }
