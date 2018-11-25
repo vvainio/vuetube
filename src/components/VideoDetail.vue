@@ -15,7 +15,7 @@
     </template>
 
     <template v-else>
-      No video selected - begin by searching for videos above
+      No video selected
     </template>
   </div>
 </template>
