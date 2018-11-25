@@ -1,20 +1,30 @@
 <template>
   <div id="app">
-    <img
-      alt="Vue logo"
-      src="./assets/logo.png"
-    >
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+    <SearchInput :search-fn="searchVideos" />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import SearchInput from './components/SearchInput.vue'
+
+import api from './services/api'
 
 export default {
   name: 'App',
+
   components: {
-    HelloWorld
+    SearchInput
+  },
+
+  data: () => ({
+    videos: []
+  }),
+
+  methods: {
+    async searchVideos (searchTerm) {
+      const data = await api.search(searchTerm)
+      this.videos = data.items
+    }
   }
 }
 </script>
