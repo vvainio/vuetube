@@ -1,11 +1,21 @@
 <template>
   <div>
     <template v-if="video">
-      <iframe :src="videoUrl" />
-      <div>
-        <div>{{ video.snippet.title }}</div>
+      <div class="container">
+        <iframe
+          allowfullscreen
+          frameborder="0"
+          :src="videoUrl"
+        />
+      </div>
+      <div class="mt-4">
+        <div class="font-medium text-2xl mb-2">{{ video.snippet.title }}</div>
         <div>{{ video.snippet.description }}</div>
       </div>
+    </template>
+
+    <template v-else>
+      No video selected - begin by searching for videos above
     </template>
   </div>
 </template>
@@ -33,4 +43,18 @@ export default {
 </script>
 
 <style scoped>
+  .container {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%;
+  }
+
+  iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
 </style>

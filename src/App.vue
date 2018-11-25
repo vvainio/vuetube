@@ -1,11 +1,29 @@
 <template>
-  <div id="app">
-    <SearchInput :search-fn="searchVideos" />
-    <VideoDetail :video="selectedVideo" />
-    <VideoList
-      :videos="videos"
-      :select-fn="selectVideo"
-    />
+  <div
+    id="app"
+    class="container mx-auto p-4"
+  >
+    <header class="flex border-b mb-4 pb-4">
+      <img
+        class="logo"
+        src="./assets/logo.png"
+      >
+      <span class="logo-color cursor-default leading-normal text-2xl">ueTube</span>
+      <SearchInput :search-fn="searchVideos" />
+    </header>
+
+    <div class="flex mb-4">
+      <div class="w-2/3 mr-2">
+        <VideoDetail class="flex-1" :video="selectedVideo" />
+      </div>
+      <div class="w-1/3 ml-2">
+        <VideoList
+          class="flex-1"
+          :videos="videos"
+          :select-fn="selectVideo"
+        />
+      </div>
+    </div>
   </div>
 </template>
 
@@ -50,6 +68,14 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
-  margin-top: 60px;
+}
+
+.logo {
+  width: 42px;
+  height: 42px;
+}
+
+.logo-color {
+  color: #47b784;
 }
 </style>

@@ -1,11 +1,14 @@
 <template>
-  <div>
-    <img
-      height="100px"
-      :alt="video.snippet.title"
-      :src="video.snippet.thumbnails.high.url"
-    >
-    {{ video.snippet.title }}
+  <div class="flex items-center mb-4 border rounded cursor-pointer">
+    <div class="w-1/4">
+      <img
+        :alt="video.snippet.title"
+        :src="video.snippet.thumbnails.high.url"
+      >
+    </div>
+    <div class="w-3/4 p-2">
+      {{ video.snippet.title }}
+    </div>
   </div>
 </template>
 
