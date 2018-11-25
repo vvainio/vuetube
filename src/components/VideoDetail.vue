@@ -21,19 +21,18 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+
 const BASE_URL = 'https://www.youtube.com/embed/'
 
 export default {
   name: 'VideoDetail',
 
-  props: {
-    video: {
-      type: Object,
-      default: null
-    }
-  },
-
   computed: {
+    ...mapGetters({
+      video: 'selectedVideo'
+    }),
+
     videoUrl () {
       const { videoId } = this.video.id
       return `${BASE_URL}/${videoId}`

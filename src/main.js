@@ -1,8 +1,8 @@
 import Vue from 'vue'
 
 import App from '@/App'
-import '@/tailwind.css'
 import store from '@/store'
+import '@/tailwind.css'
 
 Vue.config.productionTip = false
 

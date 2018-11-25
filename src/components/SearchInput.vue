@@ -14,13 +14,6 @@
 export default {
   name: 'SearchInput',
 
-  props: {
-    searchFn: {
-      type: Function,
-      required: true
-    }
-  },
-
   data: () => ({
     searchTerm: ''
   }),
@@ -28,7 +21,7 @@ export default {
   methods: {
     onEnter () {
       if (this.searchTerm) {
-        this.searchFn(this.searchTerm)
+        this.$store.dispatch('searchVideos', this.searchTerm)
       }
     }
   }

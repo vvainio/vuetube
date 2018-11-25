@@ -9,22 +9,15 @@
         src="./assets/logo.png"
       >
       <span class="logo-color cursor-default leading-normal text-2xl">ueTube</span>
-      <SearchInput :search-fn="searchVideos" />
+      <SearchInput />
     </header>
 
     <div class="flex mb-4">
       <div class="w-2/3 mr-2">
-        <VideoDetail
-          class="flex-1"
-          :video="selectedVideo"
-        />
+        <VideoDetail class="flex-1" />
       </div>
       <div class="w-1/3 ml-2">
-        <VideoList
-          class="flex-1"
-          :videos="videos"
-          :select-fn="selectVideo"
-        />
+        <VideoList class="flex-1" />
       </div>
     </div>
   </div>
@@ -34,7 +27,6 @@
 import SearchInput from '@/components/SearchInput'
 import VideoDetail from '@/components/VideoDetail'
 import VideoList from '@/components/VideoList'
-import api from '@/services/api'
 
 export default {
   name: 'App',
@@ -43,23 +35,6 @@ export default {
     SearchInput,
     VideoDetail,
     VideoList
-  },
-
-  data: () => ({
-    selectedVideo: null,
-    videos: []
-  }),
-
-  methods: {
-    async searchVideos (searchTerm) {
-      const data = await api.search(searchTerm)
-      this.videos = data.items
-    },
-
-    selectVideo (video) {
-      this.selectedVideo = video
-      document.title = `VueTube - ${video.snippet.title}`
-    }
   }
 }
 </script>
