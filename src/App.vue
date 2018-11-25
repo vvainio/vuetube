@@ -56,6 +56,7 @@ export default {
 
     selectVideo (video) {
       this.selectedVideo = video
+      document.title = `VueTube - ${video.snippet.title}`
     }
   }
 }
