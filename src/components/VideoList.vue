@@ -4,7 +4,7 @@
       v-for="video in videos"
       :key="video.etag"
       :video="video"
-      @click.native="selectFn(video)"
+      @click.native="$emit('on-select', video)"
     />
   </div>
 </template>
@@ -20,10 +20,6 @@ export default {
   },
 
   props: {
-    selectFn: {
-      type: Function,
-      required: true
-    },
     videos: {
       type: Array,
       required: true

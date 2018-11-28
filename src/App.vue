@@ -9,7 +9,7 @@
         src="./assets/logo.png"
       >
       <span class="logo-color cursor-default leading-normal text-2xl">ueTube</span>
-      <SearchInput :search-fn="searchVideos" />
+      <SearchInput @on-submit="searchVideos" />
     </header>
 
     <div class="flex mb-4">
@@ -23,7 +23,7 @@
         <VideoList
           class="flex-1"
           :videos="videos"
-          :select-fn="selectVideo"
+          @on-select="selectVideo"
         />
       </div>
     </div>

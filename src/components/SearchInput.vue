@@ -14,21 +14,14 @@
 export default {
   name: 'SearchInput',
 
-  props: {
-    searchFn: {
-      type: Function,
-      required: true
-    }
-  },
-
   data: () => ({
     searchTerm: ''
   }),
 
   methods: {
     onEnter () {
-      if (this.searchTerm) {
-        this.searchFn(this.searchTerm)
+      if (this.searchTerm.length) {
+        this.$emit('on-submit', this.searchTerm)
       }
     }
   }
