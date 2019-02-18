@@ -1,6 +1,6 @@
 # VueTube
 
-A simple Vue.js front-end for YouTube.
+A very basic [Vue.js](https://vuejs.org) client for YouTube. See the [vuex](https://github.com/vvainio/vuetube/tree/vuex) branch for an alternative implementation using [Vuex](https://vuex.vuejs.org) for state handling.
 
 ## Project setup
 
